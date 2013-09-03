@@ -2,13 +2,27 @@
 
 <?import java.lang.*?>
 <?import java.util.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml" fx:controller="javafxpasswordgenerator.GUIController">
-    <children>
-	<Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-	<Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml" fx:controller="javafxpasswordgenerator.GUIController">
+  <children>
+    <TextField fx:id="passwordTextField" alignment="CENTER" editable="false" layoutX="14.0" layoutY="39.0" prefWidth="372.0" promptText="Password" />
+    <CheckBox fx:id="upperChoice" layoutX="14.0" layoutY="138.0" mnemonicParsing="false" text="Uppercase Letters (A-Z)" />
+    <CheckBox fx:id="lowerChoice" layoutX="14.0" layoutY="179.0" mnemonicParsing="false" text="Lowercase Letters (a-z)" />
+    <CheckBox fx:id="numbersChoice" layoutX="200.0" layoutY="138.0" mnemonicParsing="false" text="Numbers (0-9)" />
+    <CheckBox fx:id="specialChoice" layoutX="200.0" layoutY="179.0" mnemonicParsing="false" text="Special Characters (!@# etc)" />
+    <ComboBox fx:id="passwordLengthCombo" layoutX="136.0" layoutY="279.0" prefHeight="21.0" prefWidth="128.0" promptText="Password Length">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Button fx:id="generateButton" layoutX="172.0" layoutY="400.0" mnemonicParsing="false" text="Generate" />
+  </children>
 </AnchorPane>

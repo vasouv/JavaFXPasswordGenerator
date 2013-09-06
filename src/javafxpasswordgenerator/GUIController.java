@@ -10,7 +10,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -18,13 +19,18 @@ import javafx.scene.control.Label;
  */
 public class GUIController implements Initializable {
     
-    @FXML
-    private Label label;
+    //Create the Password object
+    Password genPassword = new Password();
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-	System.out.println("You clicked me!");
-	label.setText("Hello World!");
+    Button generateButton;
+    
+    @FXML
+    TextField passwordTextField;
+    
+    @FXML
+    private void createPassword() {
+	passwordTextField.setText(genPassword.generatePassword(8));
     }
     
     @Override

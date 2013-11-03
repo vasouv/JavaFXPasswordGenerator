@@ -17,9 +17,9 @@
     <ComboBox fx:id="passwordLengthCombo" layoutX="136.0" layoutY="279.0" prefHeight="21.0" prefWidth="128.0" promptText="Password Length">
       <items>
         <FXCollections fx:factory="observableArrayList">
-          <String fx:value="Item 1" />
-          <String fx:value="Item 2" />
-          <String fx:value="Item 3" />
+          <String fx:value="8" />
+          <String fx:value="9" />
+          <String fx:value="10" />
         </FXCollections>
       </items>
     </ComboBox>

@@ -30,14 +30,34 @@ public class Password {
 	this.passwordLength = passwordLength;
     }
     
-    public String generatePassword(int passLength) {
-	StringBuilder tempPassword = new StringBuilder();
-	Random randNumber = new Random();
+    public String generatePassword(int passLength, boolean numbers, boolean lower, 
+            boolean upper, boolean special) {
 	
-	for(int i = 0; i < passLength; i++) {
-	    tempPassword.append(ALLCHARS.charAt(randNumber.nextInt(ALLCHARS.length())));
-	}
+        StringBuilder characterArray = new StringBuilder();
+        StringBuilder tempPassword = new StringBuilder();
+        
+        if(numbers) {
+            characterArray.append(NUMBERS);
+        }
+        if(lower) {
+            characterArray.append(LOWERCASE);
+        }
+        if(upper) {
+            characterArray.append(UPPERCASE);
+        }
+        if(special) {
+            characterArray.append(SPECIAL);
+        }
+        if(!numbers && !lower && !upper && !special){
+            characterArray.append(ALLCHARS);
+        }
 	
+        Random randNumber = new Random();
+        
+        for (int i = 0; i < passLength; i++) {
+            tempPassword.append(characterArray.toString().charAt(randNumber.nextInt(characterArray.length())));
+            
+        }
 	
 	return tempPassword.toString();
     }

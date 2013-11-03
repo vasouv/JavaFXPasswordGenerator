@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml" fx:controller="javafxpasswordgenerator.GUIController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="javafxpasswordgenerator.GUIController">
   <children>
     <TextField fx:id="passwordTextField" alignment="CENTER" editable="false" layoutX="14.0" layoutY="39.0" prefWidth="372.0" promptText="Password" />
     <CheckBox fx:id="upperChoice" layoutX="14.0" layoutY="138.0" mnemonicParsing="false" text="Uppercase Letters (A-Z)" />
@@ -23,6 +23,6 @@
         </FXCollections>
       </items>
     </ComboBox>
-    <Button fx:id="generateButton" layoutX="172.0" layoutY="400.0" mnemonicParsing="false" text="Generate" />
+    <Button fx:id="generateButton" layoutX="172.0" layoutY="400.0" mnemonicParsing="false" onAction="#createPassword" text="Generate" />
   </children>
 </AnchorPane>

@@ -29,7 +29,7 @@ public class GUIController implements Initializable {
     TextField passwordTextField;
     
     @FXML
-    private void createPassword() {
+    private void createPassword(ActionEvent e) {
 	passwordTextField.setText(genPassword.generatePassword(8));
     }
     

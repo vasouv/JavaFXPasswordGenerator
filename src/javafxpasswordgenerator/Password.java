@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package javafxpasswordgenerator;
 
 import java.util.Random;
@@ -30,6 +25,19 @@ public class Password {
 	this.passwordLength = passwordLength;
     }
     
+    /**
+     * The method creates a StringBuilder with the desired characters, according
+     * the user's input. If no characters are specified, it defaults to using all of
+     * them. A loop is selecting characters from the StringBuilder and the final
+     * password is returned.
+     * 
+     * @param passLength - The length of the to-be generated password
+     * @param numbers - If the password will contain numbers
+     * @param lower - If the password will contain lowercase letters
+     * @param upper - If the password will contain uppercase letters
+     * @param special - If the password will contain special chars (!@#$ etc)
+     * @return - A String of the password
+     */
     public String generatePassword(int passLength, boolean numbers, boolean lower, 
             boolean upper, boolean special) {
 	
@@ -55,7 +63,8 @@ public class Password {
         Random randNumber = new Random();
         
         for (int i = 0; i < passLength; i++) {
-            tempPassword.append(characterArray.toString().charAt(randNumber.nextInt(characterArray.length())));
+            tempPassword.append(characterArray.toString()
+                    .charAt(randNumber.nextInt(characterArray.length())));
             
         }
 	

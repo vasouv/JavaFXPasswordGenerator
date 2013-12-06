@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package javafxpasswordgenerator;
 
 import java.net.URL;
@@ -40,8 +35,10 @@ public class GUIController implements Initializable {
     private void createPassword(ActionEvent e) {
 	passwordTextField.setText(genPassword.generatePassword(
                 Integer.parseInt(passwordLengthCombo.getSelectionModel().getSelectedItem().toString()), 
-                numbersChoice.isSelected(), lowerChoice.isSelected(), 
-                upperChoice.isSelected(), specialChoice.isSelected()));
+                numbersChoice.isSelected(), 
+                lowerChoice.isSelected(), 
+                upperChoice.isSelected(), 
+                specialChoice.isSelected()));
     }
     
     @Override

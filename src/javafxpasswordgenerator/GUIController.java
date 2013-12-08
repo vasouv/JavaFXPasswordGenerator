@@ -19,6 +19,9 @@ public class GUIController implements Initializable {
     //Create the Password object
     Password genPassword = new Password();
     
+    //Creates the obj thatt holds the last 8 passwords
+    PreviousPasswords prevPasswords = new PreviousPasswords();
+    
     @FXML
     Button generateButton;
     

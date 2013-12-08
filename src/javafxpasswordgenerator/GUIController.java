@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 /**
@@ -35,6 +36,9 @@ public class GUIController implements Initializable {
     ComboBox passwordLengthCombo;
     
     @FXML
+    ListView prevPassList;
+    
+    @FXML
     private void createPassword(ActionEvent e) {
 	passwordTextField.setText(genPassword.generatePassword(
                 Integer.parseInt(passwordLengthCombo.getSelectionModel().getSelectedItem().toString()), 
@@ -42,6 +46,15 @@ public class GUIController implements Initializable {
                 lowerChoice.isSelected(), 
                 upperChoice.isSelected(), 
                 specialChoice.isSelected()));
+        
+        prevPasswords.add(passwordTextField.getText());
+        
+        showPreviousPasswords();
+    }
+    
+    @FXML
+    private void showPreviousPasswords() {
+        prevPassList.setItems(prevPasswords.getPasswords());
     }
     
     @Override

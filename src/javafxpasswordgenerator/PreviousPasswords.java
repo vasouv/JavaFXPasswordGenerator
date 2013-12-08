@@ -6,7 +6,10 @@
 
 package javafxpasswordgenerator;
 
+import java.util.Collections;
 import java.util.LinkedList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -33,6 +36,11 @@ public class PreviousPasswords {
     
     private boolean isFull() {
         return prevPass.size() == 8;
+    }
+    
+    public ObservableList<String> getPasswords() {
+        ObservableList<String> prv = FXCollections.observableList(prevPass);
+        return prv;
     }
     
 }

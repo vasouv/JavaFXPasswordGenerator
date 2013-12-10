@@ -30,7 +30,7 @@
       </items>
     </ComboBox>
     <Button fx:id="generateButton" layoutX="166.0" layoutY="332.0" mnemonicParsing="false" onAction="#createPassword" text="Generate" />
-    <Button layoutX="234.0" layoutY="177.0" mnemonicParsing="false" prefWidth="152.00009999999747" text="Copy to Clipboard" />
+    <Button fx:id="copyToClipBtn" layoutX="234.0" layoutY="177.0" mnemonicParsing="false" onAction="#copyPassToClipboard" prefWidth="152.00009999999747" text="Copy to Clipboard" />
     <ListView fx:id="prevPassList" layoutX="110.0" layoutY="386.0" prefHeight="200.0" prefWidth="200.0" />
   </children>
 </AnchorPane>

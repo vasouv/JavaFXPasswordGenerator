@@ -6,7 +6,6 @@
 
 package javafxpasswordgenerator;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

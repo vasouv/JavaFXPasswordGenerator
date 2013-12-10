@@ -23,6 +23,9 @@ public class GUIController implements Initializable {
     //Creates the obj thatt holds the last 8 passwords
     PreviousPasswords prevPasswords = new PreviousPasswords();
     
+    //Creates the ClipBoardHandler
+    ClipboardHandler clphandler = new ClipboardHandler();
+    
     @FXML
     Button generateButton;
     
@@ -37,6 +40,9 @@ public class GUIController implements Initializable {
     
     @FXML
     ListView prevPassList;
+    
+    @FXML
+    Button copyToClipBtn;
     
     @FXML
     private void createPassword(ActionEvent e) {
@@ -55,6 +61,11 @@ public class GUIController implements Initializable {
     @FXML
     private void showPreviousPasswords() {
         prevPassList.setItems(prevPasswords.getPasswords());
+    }
+    
+    @FXML
+    private void copyPassToClipboard(ActionEvent e) {
+        clphandler.copyToClipboard(passwordTextField.getText());
     }
     
     @Override
